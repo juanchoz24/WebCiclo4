@@ -1,0 +1,15 @@
+<nav class ="indigo accent-3">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">MISIÓN TIC</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li *ngIf="activeSession"><a href="/clientes/get">Clientes</a></li>
+        <li *ngIf="activeSession"><a href="/encomiendas/get">Encomiendas</a></li>
+        <li *ngIf="activeSession"><a href="/servicios/get">Servicios</a></li>
+        <li *ngIf="activeSession"><a href="/admin/get">Usuarios</a></li>
+ <!-- Sesion -->
+        <li *ngIf="!activeSession"><a routerLink="/admin/create">Registrarse</a></li>
+        <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
+        <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
+      </ul>
+    </div>
+  </nav>
