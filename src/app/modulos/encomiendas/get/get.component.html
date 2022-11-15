@@ -1,1 +1,27 @@
-<p>Desde Encomiendas</p>
+<div class="container">
+    <br />
+    <a routerLink="/encomiendas/create" class="btn">Registrar Encomienda</a>
+  
+    <table class="table responsive">
+      <thead>
+        <tr>
+          <th>Descripción</th>
+          <th>Peso</th>
+          <th>Tipo</th>
+          <th>Presentación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let encomienda of listado">
+          <td>{{ encomienda.descripcion }}</td>
+          <td>{{ encomienda.peso }}</td>
+          <td>{{ encomienda.tipo }}</td>
+          <td>{{ encomienda.presentacion }}</td>
+          <td>
+            <a routerLink="/encomienda/edit/{{ encomienda.id }}" class="btn">Editar</a>
+            <button class="btn red" (click)="delete(encomienda.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

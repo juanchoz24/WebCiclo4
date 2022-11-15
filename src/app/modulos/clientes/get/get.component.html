@@ -1,1 +1,37 @@
-<p>Desde Clientes</p>
+<div class="container">
+    <br />
+    <a routerLink="/clientes/create" class="btn">Registrar cliente</a>
+  
+    <table class="table responsive">
+      <thead>
+        <tr>
+          <th>Cedula</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Pais</th>
+          <th>Cuidad</th>
+          <th>Departamento</th>
+          <th>dirreccion</th>
+          <th>Telefono</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of listado">
+          <td>{{ cliente.cedula }}</td>
+          <td>{{ cliente.nombre }}</td>
+          <td>{{ cliente.apellidos }}</td>
+          <td>{{ cliente.pais }}</td>
+          <td>{{ cliente.ciudad }}</td>
+          <td>{{ cliente.departamento }}</td>
+          <td>{{ cliente.direccion }}</td>
+          <td>{{ cliente.telefono }}</td>
+          <td>{{ cliente.email }}</td>
+          <td>
+            <a routerLink="/clientes/edit/{{ cliente.id }}" class="btn">Editar</a>
+            <button class="btn red" (click)="delete(cliente.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -17,7 +17,7 @@ export class EncomiendaService {
 }
 
 store(encomienda: EncomiendaModel): Observable<EncomiendaModel> {
-  return this.http.post<EncomiendaModel>(`${this.url}/encomienda`, {
+  return this.http.post<EncomiendaModel>(`${this.url}/encomiendas`, {
     descripcion: encomienda.descripcion,
     peso: encomienda.peso,
     tipo: encomienda.tipo,
@@ -26,18 +26,19 @@ store(encomienda: EncomiendaModel): Observable<EncomiendaModel> {
 }
 
 getAll(): Observable<EncomiendaModel[]>{
-  return this.http.get<EncomiendaModel[]>(`${this.url}/encomienda`, {
+  return this.http.get<EncomiendaModel[]>(`${this.url}/encomiendas`, {
     headers: new HttpHeaders({
       "Authorization": `Bearer ${this.token}`
     })
   })
 }
 update(encomienda: EncomiendaModel): Observable<EncomiendaModel> {
-  return this.http.patch<EncomiendaModel>(`${this.url}/encomienda/${encomienda.id}`, {
+  return this.http.patch<EncomiendaModel>(`${this.url}/encomiendas/${encomienda.id}`, {
     descripcion: encomienda.descripcion,
     peso: encomienda.peso,
     tipo: encomienda.tipo,
     presentacion: encomienda.peso
+    
   }, {
     headers: new HttpHeaders({
       "Authorization": `Bearer ${this.token}`
@@ -45,14 +46,14 @@ update(encomienda: EncomiendaModel): Observable<EncomiendaModel> {
   });
 }
 delete(id: string): Observable<EncomiendaModel[]>{
-  return this.http.delete<EncomiendaModel[]>(`${this.url}/encomienda/${id}`, {
+  return this.http.delete<EncomiendaModel[]>(`${this.url}/encomiendas/${id}`, {
     headers: new HttpHeaders({
       "Authorization": `Bearer ${this.token}`
     })
   })
 }
 getWithId(id: string): Observable<EncomiendaModel>{
-  return this.http.get<EncomiendaModel>(`${this.url}/Encomienda/${id}`,{
+  return this.http.get<EncomiendaModel>(`${this.url}/encomiendas/${id}`,{
     headers: new HttpHeaders({
       "Authorization": `Bearer ${this.token}`
     })

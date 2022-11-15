@@ -5,7 +5,7 @@ import { EncomiendasRoutingModule } from './encomiendas-routing.module';
 import { EditComponent } from './edit/edit.component';
 import { CreateComponent } from './create/create.component';
 import { GetComponent } from './get/get.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,9 @@ import { GetComponent } from './get/get.component';
   ],
   imports: [
     CommonModule,
-    EncomiendasRoutingModule
+    EncomiendasRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class EncomiendasModule { }
