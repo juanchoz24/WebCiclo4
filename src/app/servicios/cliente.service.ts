@@ -17,7 +17,7 @@ export class ClienteService {
 }
 
 store(cliente: ClienteModel): Observable<ClienteModel> {
-  return this.http.post<ClienteModel>(`${this.url}/cliente`, {
+  return this.http.post<ClienteModel>(`${this.url}/clientes`, {
     cedula: cliente.cedula,
     nombre: cliente.nombre,
     apellidos: cliente.apellidos,
@@ -31,14 +31,14 @@ store(cliente: ClienteModel): Observable<ClienteModel> {
 }
 
 getAll(): Observable<ClienteModel[]>{
-  return this.http.get<ClienteModel[]>(`${this.url}/cliente`, {
+  return this.http.get<ClienteModel[]>(`${this.url}/clientes`, {
     headers: new HttpHeaders({
       "Authorization": `Bearer ${this.token}`
     })
   })
 }
 update(cliente: ClienteModel): Observable<ClienteModel> {
-  return this.http.patch<ClienteModel>(`${this.url}/cliente/${cliente.id}`, {
+  return this.http.patch<ClienteModel>(`${this.url}/clientes/${cliente.id}`, {
     cedula: cliente.cedula,
     nombre: cliente.nombre,
     apellidos: cliente.apellidos,
@@ -55,14 +55,14 @@ update(cliente: ClienteModel): Observable<ClienteModel> {
   });
 }
 delete(id: string): Observable<ClienteModel[]>{
-  return this.http.delete<ClienteModel[]>(`${this.url}/cliente/${id}`, {
+  return this.http.delete<ClienteModel[]>(`${this.url}/clientes/${id}`, {
     headers: new HttpHeaders({
       "Authorization": `Bearer ${this.token}`
     })
   })
 }
 getWithId(id: string): Observable<ClienteModel>{
-  return this.http.get<ClienteModel>(`${this.url}/cliente/${id}`,{
+  return this.http.get<ClienteModel>(`${this.url}/clientes/${id}`,{
     headers: new HttpHeaders({
       "Authorization": `Bearer ${this.token}`
     })
