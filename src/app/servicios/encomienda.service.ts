@@ -21,7 +21,7 @@ store(encomienda: EncomiendaModel): Observable<EncomiendaModel> {
     descripcion: encomienda.descripcion,
     peso: encomienda.peso,
     tipo: encomienda.tipo,
-    presentacion: encomienda.peso
+    presentacion: encomienda.presentacion
   });
 }
 
@@ -37,7 +37,7 @@ update(encomienda: EncomiendaModel): Observable<EncomiendaModel> {
     descripcion: encomienda.descripcion,
     peso: encomienda.peso,
     tipo: encomienda.tipo,
-    presentacion: encomienda.peso
+    presentacion: encomienda.presentacion
     
   }, {
     headers: new HttpHeaders({
