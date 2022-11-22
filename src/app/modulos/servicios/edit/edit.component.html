@@ -5,23 +5,29 @@
       <input formControlName="id" type="hidden" class="validate">
        <div class="row">
         <div class="input-field col s6">
-            <input formControlName="origen" type="text" class="validate">
-            <label class="active" for="origen">Cliente Origen</label>
-          </div>
-          <div class="input-field col s6">
-            <input formControlName="destino" type="text" class="validate">
-            <label class="active" for="destino">Cliente Destino</label>
-          </div>
+          <select class="browser-default" formControlName="origen" >
+            <option value="" disabled selected>Seleccione el cliente origen</option>
+            <option *ngFor="let cliente of listadoClientes" value="{{cliente.nombre}} - {{cliente.apellidos}}">{{cliente.nombre}} - {{cliente.apellidos}}</option>
+          </select>
         </div>
-    <div class="row">
         <div class="input-field col s6">
-            <input formControlName="fecha" type="date" class="validate" />
-            <label class="active" for="fecha">Fecha</label>
+          <select class="browser-default" formControlName="destino" >
+            <option value="" disabled selected>Seleccione el cliente destino</option>
+            <option *ngFor="let cliente of listadoClientes" value="{{cliente.nombre}} - {{cliente.apellidos}}">{{cliente.nombre}} - {{cliente.apellidos}}</option>
+          </select>
+        </div>
+        </div>
+        <h6 class="center-align">Fecha y Hora</h6>
+        <div class="row">
+          
+          <div class="input-field col s6">
+            <input formControlName="fechaHora" type="datetime-local" class="validate" />
+            <label for="fechaHora"></label>
           </div>
-      <div class="input-field col s6">
+      <!--<div class="input-field col s6">
         <input formControlName="hora" type="datetime-local" class="validate">
         <label class="active" for="hora">Hora</label>
-      </div>
+      </div>-->
     </div>
     
     <div class="row">

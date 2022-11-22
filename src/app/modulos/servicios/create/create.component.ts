@@ -26,8 +26,8 @@ export class CreateComponent implements OnInit {
     fgValidacion = this.fb.group({
       origen: ['', [Validators.required]],
       destino: ['', [Validators.required]],
-      fecha: ['', [Validators.required]],
-      hora: ['', [Validators.required]],
+      fechaHora: ['', [Validators.required]],
+      //hora: ['', [Validators.required]],
       encomienda: ['', [Validators.required]],
       valor: ['', [Validators.required]],
     });
@@ -43,8 +43,8 @@ export class CreateComponent implements OnInit {
     let servicio = new ServicioModel();
     servicio.origen = this.fgValidacion.controls["origen"].value as string;
     servicio.destino = this.fgValidacion.controls["destino"].value as string;
-    servicio.fecha = this.fgValidacion.controls["fecha"].value as string;
-    servicio.hora = this.fgValidacion.controls["hora"].value as string;
+    servicio.fechaHora = this.fgValidacion.controls["fechaHora"].value as string;
+    //servicio.hora = this.fgValidacion.controls["hora"].value as string;
     servicio.encomienda = this.fgValidacion.controls["encomienda"].value as string;
     servicio.valor = this.fgValidacion.controls["valor"].value as unknown as number;
  
@@ -57,8 +57,8 @@ export class CreateComponent implements OnInit {
       console.log(error+ 
         servicio.origen + 
     servicio.destino + 
-    servicio.fecha +
-    servicio.hora +
+    servicio.fechaHora +
+    //servicio.hora +
     servicio.encomienda +
     servicio.valor  )
       alert("Error en el envio");

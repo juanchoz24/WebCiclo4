@@ -7,8 +7,8 @@
         <tr>
           <th>Origen</th>
           <th>Destino</th>
-          <th>Fecha</th>
-          <th>Hora</th>
+          <th>Fecha y Hora</th>
+          <!--<th>Hora</th>-->
           <th>Encomienda</th>
           <th>valor</th>
         </tr>
@@ -17,8 +17,8 @@
         <tr *ngFor="let servicio of listado">
           <td>{{ servicio.origen }}</td>
           <td>{{ servicio.destino }}</td>
-          <td>{{ servicio.fecha }}</td>
-          <td>{{ servicio.hora }}</td>
+          <td>{{ servicio.fechaHora }}</td>
+          <!--<td>{{ servicio.hora }}</td>-->
           <td>{{ servicio.encomienda }}</td>
           <td>{{ servicio.valor }}</td>
           <td>

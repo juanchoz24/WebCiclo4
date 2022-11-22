@@ -66,7 +66,7 @@ getWithId(id: string){
  
     this.clienteService.update(usuario).subscribe((data: ClienteModel)=> {
       Swal.fire('Editado Correctamente!', '', 'success')
-      this.router.navigate(['/get']);
+      this.router.navigate(['clientes/get']);
     },
     (error: any) => {
       console.log(error)

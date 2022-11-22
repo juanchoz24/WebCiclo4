@@ -53,7 +53,7 @@ getWithId(id: string){
      
     this.encomiendaService.update(usuario).subscribe((data: EncomiendaModel)=> {
       Swal.fire('Editado Correctamente!', '', 'success')
-      this.router.navigate(['/get']);
+      this.router.navigate(['encomiendas/get']);
     },
     (error: any) => {
       console.log(error)

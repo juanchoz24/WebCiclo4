@@ -20,8 +20,8 @@ store(servicio: ServicioModel): Observable<ServicioModel> {
   return this.http.post<ServicioModel>(`${this.url}/servicios`, {
     origen: servicio.origen,
     destino: servicio.destino,
-    fecha: servicio.fecha,
-    hora: servicio.hora,
+    fechaHora: servicio.fechaHora,
+    //hora: servicio.hora,
     encomienda: servicio.encomienda,
     valor: servicio.valor
   });
@@ -38,8 +38,8 @@ update(servicio: ServicioModel): Observable<ServicioModel> {
   return this.http.patch<ServicioModel>(`${this.url}/servicios/${servicio.id}`, {
     origen: servicio.origen,
     destino: servicio.destino,
-    fecha: servicio.fecha,
-    hora: servicio.hora,
+    fechaHora: servicio.fechaHora,
+    //hora: servicio.hora,
     encomienda: servicio.encomienda,
     valor: servicio.valor
   }, {
