@@ -36,8 +36,11 @@ const routes: Routes = [
     redirectTo: '/error'
   }
 ]
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
+@NgModule({ 
+  imports: [RouterModule.forRoot(routes, {
+    useHash: true,
+  }
+)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
